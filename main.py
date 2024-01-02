@@ -173,8 +173,7 @@ st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
 
 table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-st.write(filtered_data)
-recommended_colleges = []
+recommended_colleges = pd.Dataframe()
 for index, row in filtered_data.iterrows():
     l = []
     l.append(row['inst_code'])
