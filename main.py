@@ -118,11 +118,11 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
 # Streamlit UI
-st.title("College Recommendation App")
+st.title("College Recommendation System")
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
-student_rank = st.number_input("Enter your rank:",value="")
+student_rank = st.number_input("Enter your rank:",minvalue=0)
 student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
@@ -178,4 +178,4 @@ for index, row in filtered_data.iterrows():
     recommended_colleges.append([row[col] for col in table_columns])
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 
-st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
+# st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
