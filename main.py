@@ -124,7 +124,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
 # Streamlit UI
-st.title("College Recommendation System")
+st.title("EAPCET College List Recommendation System")
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
