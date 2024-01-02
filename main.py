@@ -183,8 +183,8 @@ for index, row in filtered_data.iterrows():
     l.append(row['branch_code'])
     l.append(row['FEE'])
     recommended_colleges.append(l)
+    st.write(recommended_colleges)
     if len(recommended_colleges)==30:
         break
-st.write(recommended_colleges)
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 st.table(pd.DataFrame(recommended_colleges, columns=table_columns).head(30))
