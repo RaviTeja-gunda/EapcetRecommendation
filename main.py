@@ -187,5 +187,5 @@ for index, row in filtered_data.iterrows():
         break
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 # st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
-st.write(recommended_colleges[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
-st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
+st.write(pd.DataFrame(recommended_colleges, columns=table_columns).head(30))
+# st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
