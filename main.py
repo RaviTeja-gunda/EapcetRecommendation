@@ -110,7 +110,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
 
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
-        # filtered_data=filtered_data.sort_values(by=target_rank)
+        filtered_data=filtered_data.sort_values(by=target_rank)
         # st.table(filtered_data[table_columns])
         st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
         return
@@ -119,7 +119,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.write(f"Your desired branch is {desired_branch}")
     st.subheader(
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
-    # filtered_data=filtered_data.sort_values(by=target_rank)
+    filtered_data=filtered_data.sort_values(by=target_rank)
     # st.table(filtered_data[table_columns])
     st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
@@ -173,8 +173,6 @@ if st.button("Get College Recommendations"):
         elif student_caste == "BCE":
             target_rank = "BCE_GIRLS"
     predict_colleges(student_text, student_rank, student_gender, data, target_rank)
-
-st.write(filtered_data)
 
 # Display recommendations using Streamlit
 st.subheader("College Recommendations")
