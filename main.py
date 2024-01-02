@@ -178,7 +178,7 @@ recommended_colleges = []
 for index, row in filtered_data.iterrows():
     l = []
     l.append(row['inst_code'])
-    l.appedn(row[target_rank])
+    l.append(row[target_rank])
     l.append(row['COED'])
     l.append(row['branch_code'])
     l.append(row['FEE'])
