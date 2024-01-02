@@ -76,9 +76,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
             if keyword in text:
                 desired_branch = entity
                 break
-
-    table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-    
+                
     # Filter colleges by rank range
     if gender == "Male":
         filtered_data = data[
@@ -111,7 +109,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
         filtered_data=sorted(filtered_data,key=lambda x:x[1])
-        st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30),columns = table_columns)
+        st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
         return
 
     # Recommend colleges
@@ -119,7 +117,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.subheader(
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
     filtered_data=sorted(filtered_data,key=lambda x:x[1])
-    st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30),columns = table_columns)
+    st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
 # Streamlit UI
 st.title("College Recommendation System")
@@ -177,16 +175,16 @@ st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
 
 table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-recommended_colleges = []
-for index, row in filtered_data.iterrows():
-    l = []
-    l.append(row['inst_code'])
-    l.append(row[target_rank])
-    l.append(row['COED'])
-    l.append(row['branch_code'])
-    l.append(row['FEE'])
-    recommended_colleges.append(l)
-    if len(recommended_colleges)==30:
-        break
+recommended_colleges = filtered_data.values.tolist()
+# for index, row in filtered_data.iterrows():
+#     l = []
+#     l.append(row['inst_code'])
+#     l.append(row[target_rank])
+#     l.append(row['COED'])
+#     l.append(row['branch_code'])
+#     l.append(row['FEE'])
+#     recommended_colleges.append(l)
+#     if len(recommended_colleges)==30:
+#         break
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 st.table(recommended_colleges)
