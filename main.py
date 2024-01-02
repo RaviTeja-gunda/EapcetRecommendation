@@ -178,4 +178,4 @@ for index, row in filtered_data.iterrows():
     recommended_colleges.append([row[col] for col in table_columns])
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 
-st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
+# st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
