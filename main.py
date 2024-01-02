@@ -108,14 +108,14 @@ def predict_colleges(text, rank, gender, data, target_rank):
 
         # st.subheader("Here are the recommendations based on your rank:")
         # st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
-        # # st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+        st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
         return
 
+    st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
     # # Recommend colleges
     # st.write(f"Your desired branch is {desired_branch}")
     # st.subheader(
     #     f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
-    # # st.write(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
 # Streamlit UI
 st.title("College Recommendation System")
