@@ -173,13 +173,8 @@ st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
 
 table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-# Directly create a list of lists with the desired data
-recommended_colleges = [
-    [row['inst_code'], row[target_rank], row['COED'], row['branch_code'], row['FEE']]
-    for _, row in filtered_data.iterrows()
-]
-recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
-st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
+filtered_data=sorted(filtered_data,key=lambda x:x[1])
+st.table(pd.DataFrame(filtered_data, columns=table_columns))
 
 # recommended_colleges = filtered_data
 # for index, row in filtered_data.iterrows():
