@@ -122,7 +122,7 @@ st.title("College Recommendation App")
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
-student_rank = st.number_input("Enter your rank:")
+student_rank = st.number_input("Enter your rank:",value="")
 student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
