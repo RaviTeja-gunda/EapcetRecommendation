@@ -56,7 +56,7 @@ lemmatizer = WordNetLemmatizer()
 
 # Load and pre-process data
 data = pd.read_csv("eapcet2023.csv")
-data.drop(columns=['SNO'],inplace=True)
+data = data.drop(columns=['SNO'],inplace=True)
 
 # Function to predict colleges based on text input and rank
 desired_branch = None
@@ -77,10 +77,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
             if keyword in text:
                 desired_branch = entity
                 break
-
-    if student_rank <= 0:
-        st.write("Provide valid rank")
-        return
+                
     # Filter colleges by rank range
     if gender == "Male":
         filtered_data = data[
@@ -126,7 +123,7 @@ st.title("College Recommendation System")
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
-student_rank = st.number_input("Enter your rank:", min_value=0)
+student_rank = st.number_input("Enter your rank:", min_value=1)
 student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
