@@ -121,8 +121,8 @@ def predict_colleges(text, rank, gender, data, target_rank):
 st.title("College Recommendation App")
 
 # User input
-student_text = st.text_area("Enter your interests:", "I am interested in programming")
-student_rank = st.number_input("Enter your rank:", min_value=0)
+student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
+student_rank = st.number_input("Enter your rank:")
 student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
@@ -176,5 +176,6 @@ table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
 recommended_colleges = []
 for index, row in filtered_data.iterrows():
     recommended_colleges.append([row[col] for col in table_columns])
+recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
 
 st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
