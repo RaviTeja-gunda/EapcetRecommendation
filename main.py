@@ -186,4 +186,4 @@ for index, row in filtered_data.iterrows():
     if len(recommended_colleges)==30:
         break
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
-st.table(recommended_colleges, columns=table_columns)
+st.table(recommended_colleges)
