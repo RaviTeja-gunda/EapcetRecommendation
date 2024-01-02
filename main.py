@@ -78,6 +78,9 @@ def predict_colleges(text, rank, gender, data, target_rank):
                 desired_branch = entity
                 break
 
+    if student_rank <= 0:
+        st.write("Provide valid rank")
+        return
     # Filter colleges by rank range
     if gender == "Male":
         filtered_data = data[
