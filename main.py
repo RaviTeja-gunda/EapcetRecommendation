@@ -186,4 +186,8 @@ for index, row in filtered_data.iterrows():
     if len(ans)==30:
         break
 recommended_colleges=sorted(recommended_colleges,key=lambda x:x[1])
+for l in recommended_colleges:
+    for i in l:
+        st.write(i,end='\t\t')
+    st.write(end='\n')
 st.table(pd.DataFrame(recommended_colleges, columns=table_columns))
