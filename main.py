@@ -174,6 +174,8 @@ if st.button("Get College Recommendations"):
             target_rank = "BCE_GIRLS"
     predict_colleges(student_text, student_rank, student_gender, data, target_rank)
 
+st.write(filtered_data)
+
 # Display recommendations using Streamlit
 st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
