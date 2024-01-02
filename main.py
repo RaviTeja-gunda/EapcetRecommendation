@@ -56,7 +56,6 @@ lemmatizer = WordNetLemmatizer()
 
 # Load and pre-process data
 data = pd.read_csv("eapcet2023.csv")
-data = data.drop(columns=['SNO'],inplace=True)
 
 # Function to predict colleges based on text input and rank
 desired_branch = None
