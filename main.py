@@ -72,8 +72,6 @@ def predict_colleges(text, rank, gender, data, target_rank):
     # Pre-process student text
     text = text.lower()
     text = [lemmatizer.lemmatize(word) for word in word_tokenize(text) if word not in stop_words]
-
-    table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
     
     # Identify desired branch based on keywords in text
     desired_branch = None
