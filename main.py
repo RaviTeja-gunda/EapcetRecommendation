@@ -119,17 +119,13 @@ def predict_colleges(text, rank, gender, data, target_rank):
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
         filtered_data=filtered_data.sort_values(by=target_rank)
-        # Define a dictionary to map old column names to new column names
-        column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'inst_type': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
         
-        # Create a new DataFrame with renamed columns and copy data
-        new_df = filtered_data.rename(columns=column_mapping).copy()
-        st.table(new_df.head(30))
-        # st.table(filtered_data[table_columns])
-        # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
-        # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
-        # filtered_data.columns = table_columns
-        # st.table(filtered_data[table_columns].head(30))
+        # # Define a dictionary to map old column names to new column names
+        # column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'inst_type': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
+        
+        # # Create a new DataFrame with renamed columns and copy data
+        # new_df = filtered_data.rename(columns=column_mapping).copy()
+        # st.table(new_df.head(30))
         return
 
     # Recommend colleges
@@ -137,17 +133,13 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.subheader(
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
     filtered_data=filtered_data.sort_values(by=target_rank)
-    # Define a dictionary to map old column names to new column names
-    column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
     
-    # Create a new DataFrame with renamed columns and copy data
-    new_df = filtered_data.rename(columns=column_mapping).copy()
-    st.table(new_df.head(30))
-    # filtered_data.columns = table_columns
-    # st.table(filtered_data[table_columns].head(30))
-    # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
-    # st.table(filtered_data[table_columns])
-    # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+    # # Define a dictionary to map old column names to new column names
+    # column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
+    
+    # # Create a new DataFrame with renamed columns and copy data
+    # new_df = filtered_data.rename(columns=column_mapping).copy()
+    # st.table(new_df.head(30))
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
@@ -203,3 +195,9 @@ if st.button("Get College Recommendations"):
 # Display recommendations using Streamlit
 st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
+# Define a dictionary to map old column names to new column names
+column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
+
+# Create a new DataFrame with renamed columns and copy data
+new_df = filtered_data.rename(columns=column_mapping).copy()
+st.table(new_df.head(30))
