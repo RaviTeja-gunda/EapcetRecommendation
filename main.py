@@ -151,6 +151,7 @@ student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
 # Button to trigger recommendations
+target_rank = None
 if st.button("Get College Recommendations"):
     if student_gender == "Male":
         if student_caste == "OC":
