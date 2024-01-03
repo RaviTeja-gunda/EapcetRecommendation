@@ -18,7 +18,7 @@ branch_map = {
     "MEC": ["design", "manufacturing", "robotics", "mechanic", "fluid", "thermodynamics"],
     "CSM": ["csm", "mathematics", "math", "algorithm", "theory", "computation", "modeling", "analysis", "problem", "solving"],
     "CSO": ["cso", "operation", "management", "business", "optimization", "decision", "making"],
-    "CSD": ["csd", "datascience", "machine", "learning", "statistic", "artificial", "bigdata", "visualization"],
+    "CSD": ["csd", "datascience", "machine", "learning", "statistic", "artificial", "intelligence", "bigdata", "visualization"],
     "INF": ["inf", "information", "system", "technology", "management", "database", "network", "software"],
     "PHD": ["phd", "physic", "optics", "material", "quantum", "mechanic", "semiconductor"],
     "PHM": ["phm", "physic", "modeling", "theoretical", "computational"],
