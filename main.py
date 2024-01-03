@@ -55,6 +55,9 @@ lemmatizer = WordNetLemmatizer()
 
 # Load and pre-process data
 data = pd.read_csv("eapcet2023.csv")
+col = ['OC_BOYS', 'OC_GIRLS', 'SC_BOYS', 'SC_GIRLS', 'ST_BOYS', 'ST_GIRLS', 'BCA_BOYS', 'BCA_GIRLS', 'BCB_BOYS', 'BCB_GIRLS', 'BCC_BOYS', 'BCC_GIRLS', 'BCD_BOYS', 'BCD_GIRLS', 'BCE_BOYS', 'BCE_GIRLS', 'OC_EWS_BOYS', 'OC_EWS_GIRLS']
+for i in col:
+    data[i] = data[i].astype(int)
 
 # Function to predict colleges based on text input and rank
 desired_branch = None
@@ -113,7 +116,6 @@ def predict_colleges(text, rank, gender, data, target_rank):
         filtered_data=filtered_data.sort_values(by=target_rank)
         # st.table(filtered_data[table_columns])
         st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
-        st.table(data)
         return
 
     # Recommend colleges
@@ -123,7 +125,6 @@ def predict_colleges(text, rank, gender, data, target_rank):
     filtered_data=filtered_data.sort_values(by=target_rank)
     # st.table(filtered_data[table_columns])
     st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
-    st.table(data)
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
