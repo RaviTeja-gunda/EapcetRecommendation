@@ -82,7 +82,9 @@ def predict_colleges(text, rank, gender, data, target_rank):
             if keyword in text:
                 desired_branch = entity
                 break
-                
+    
+    table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
+    
     # Filter colleges by rank range
     if gender == "Male":
         filtered_data = data[
@@ -116,8 +118,11 @@ def predict_colleges(text, rank, gender, data, target_rank):
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
         filtered_data=filtered_data.sort_values(by=target_rank)
         # st.table(filtered_data[table_columns])
-        st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+        # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
         # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
+        new_tab = pd.DataFrame(filtered_data)
+        new_tab.columns = table_columns
+        st.table(new_tab[table_columns].head(30))
         return
 
     # Recommend colleges
@@ -125,9 +130,12 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.subheader(
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
     filtered_data=filtered_data.sort_values(by=target_rank)
+    new_tab = pd.DataFrame(filtered_data)
+    new_tab.columns = table_columns
+    st.table(new_tab[table_columns].head(30))
     # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
     # st.table(filtered_data[table_columns])
-    st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+    # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
@@ -183,8 +191,3 @@ if st.button("Get College Recommendations"):
 # Display recommendations using Streamlit
 st.subheader("College Recommendations")
 st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
-
-table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-new_tab = pd.DataFrame(filtered_data)
-new_tab.columns = table_columns
-st.table(new_tab[table_columns].head(30))
