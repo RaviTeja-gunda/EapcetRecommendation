@@ -15,7 +15,7 @@ branch_map = {
     "CSE": ["computer", "science", "cse", "software", "IT", "programming", "coding", "algorithm", "data", "structure", "system"],
     "ECE": ["ece", "electronics", "circuit", "communication", "networking", "wireless", "rf", "antenna"],
     "EEE": ["eee", "electricity", "power", "energy", "circuit", "control"],
-    "MEC": ["design", "manufacturing", "robotics", "mechanic", "fluid", "thermodynamics"],
+    "MEC": ["design", "manufacturing", "mechanic", "fluid", "thermodynamics"],
     "CSM": ["csm", "mathematics", "math", "algorithm", "theory", "computation", "modeling", "analysis", "problem", "solving"],
     "CSO": ["cso", "operation", "management", "business", "optimization", "decision", "making"],
     "CSD": ["csd", "datascience", "machine", "learning", "statistic", "artificial", "intelligence", "bigdata", "visualization"],
