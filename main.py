@@ -11,7 +11,7 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 # Define branch mapping
 branch_map = {
-    "CIV": ["civil", "construction", "building", "bridge", "infrastructure", "road", "dam", "design"],
+    "CIV": ["civil", "construction", "building", "bridge", "infrastructure", "road", "dam"],
     "CSE": ["computer", "science", "cse", "software", "IT", "programming", "coding", "algorithm", "data", "structure", "system"],
     "ECE": ["ece", "electronics", "circuit", "communication", "networking", "wireless", "rf", "antenna"],
     "EEE": ["eee", "electricity", "power", "energy", "circuit", "control"],
