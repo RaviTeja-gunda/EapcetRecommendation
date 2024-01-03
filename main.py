@@ -193,12 +193,12 @@ if st.button("Get College Recommendations"):
             target_rank = "BCE_GIRLS"
     predict_colleges(student_text, student_rank, student_gender, data, target_rank)
 
-# Display recommendations using Streamlit
-st.subheader("College Recommendations")
-st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
-# Define a dictionary to map old column names to new column names
-column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
-
-# Create a new DataFrame with renamed columns and copy data
-new_df = filtered_data.rename(columns=column_mapping).copy()
-st.table(new_df.head(30))
+    # Display recommendations using Streamlit
+    st.subheader("College Recommendations")
+    st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired_branch}, gender {student_gender}, and caste {student_caste}:")
+    # Define a dictionary to map old column names to new column names
+    column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
+    
+    # Create a new DataFrame with renamed columns and copy data
+    new_df = filtered_data.rename(columns=column_mapping).copy()
+    st.table(new_df.head(30))
