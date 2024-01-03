@@ -113,6 +113,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
         filtered_data=filtered_data.sort_values(by=target_rank)
         # st.table(filtered_data[table_columns])
         st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+        st.table(data)
         return
 
     # Recommend colleges
@@ -122,6 +123,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     filtered_data=filtered_data.sort_values(by=target_rank)
     # st.table(filtered_data[table_columns])
     st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
+    st.table(data)
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
