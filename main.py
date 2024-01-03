@@ -187,4 +187,4 @@ st.write(f"Recommended colleges for rank {student_rank}, desired branch {desired
 table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
 new_tab = pd.DataFrame(filtered_data)
 new_tab.columns = table_columns
-st.table(new_tab[table_columns].head(30)
+st.table(new_tab[table_columns].head(30))
