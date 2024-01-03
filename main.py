@@ -94,7 +94,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
             (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000) & (data["branch_code"] == desired_branch)
         ]
    
-    filtered_data = filtered_data[['inst_code', target_rank, 'inst_type', 'branch_code', 'FEE']]
+    filtered_data = filtered_data[['inst_code', target_rank, 'COED', 'branch_code', 'COLLFEE']]
     
     # Check if branch identified
     if desired_branch is None or len(filtered_data) < 5:
@@ -114,7 +114,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
                 (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000)
             ]
         
-        filtered_data = filtered_data[['inst_code', target_rank, 'inst_type', 'branch_code', 'FEE']]
+        filtered_data = filtered_data[['inst_code', target_rank, 'COED', 'branch_code', 'COLLFEE']]
         
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
@@ -138,7 +138,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
     filtered_data=filtered_data.sort_values(by=target_rank)
     # Define a dictionary to map old column names to new column names
-    column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'inst_type': 'inst_type', 'branch_code': 'branch_code', 'FEE': 'FEE'}
+    column_mapping = {'inst_code': 'inst_code', target_rank: 'rank_cutoff', 'COED': 'inst_type', 'branch_code': 'branch_code', 'COLLFEE': 'FEE'}
     
     # Create a new DataFrame with renamed columns and copy data
     new_df = filtered_data.rename(columns=column_mapping).copy()
