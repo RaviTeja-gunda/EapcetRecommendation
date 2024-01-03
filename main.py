@@ -57,6 +57,7 @@ lemmatizer = WordNetLemmatizer()
 data = pd.read_csv("eapcet2023.csv")
 col = ['OC_BOYS', 'OC_GIRLS', 'SC_BOYS', 'SC_GIRLS', 'ST_BOYS', 'ST_GIRLS', 'BCA_BOYS', 'BCA_GIRLS', 'BCB_BOYS', 'BCB_GIRLS', 'BCC_BOYS', 'BCC_GIRLS', 'BCD_BOYS', 'BCD_GIRLS', 'BCE_BOYS', 'BCE_GIRLS', 'OC_EWS_BOYS', 'OC_EWS_GIRLS']
 for i in col:
+    data[i] = data[i].fillna(0)
     data[i] = data[i].astype(int)
 
 # Function to predict colleges based on text input and rank
