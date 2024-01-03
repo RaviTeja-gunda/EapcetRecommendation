@@ -117,20 +117,31 @@ def predict_colleges(text, rank, gender, data, target_rank):
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
         filtered_data=filtered_data.sort_values(by=target_rank)
+        # Check if filtered_data is not empty
+        if not filtered_data.empty:
+            table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
+            st.table(filtered_data[table_columns].head(30))
+        else:
+            st.write("No data available.")
         # st.table(filtered_data[table_columns])
         # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
         # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
-        filtered_data.columns = table_columns
-        st.table(filtered_data[table_columns].head(30))
+        # filtered_data.columns = table_columns
+        # st.table(filtered_data[table_columns].head(30))
         return
 
     # Recommend colleges
     st.write(f"Your desired branch is {desired_branch}")
     st.subheader(
         f"Recommended colleges for rank {rank}, desired branch {desired_branch}, gender {gender}, and caste {student_caste}:")
-    filtered_data=filtered_data.sort_values(by=target_rank)
-    filtered_data.columns = table_columns
-    st.table(filtered_data[table_columns].head(30))
+    if not filtered_data.empty:
+        table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
+        st.table(filtered_data[table_columns].head(30))
+    else:
+        st.write("No data available.")
+    # filtered_data=filtered_data.sort_values(by=target_rank)
+    # filtered_data.columns = table_columns
+    # st.table(filtered_data[table_columns].head(30))
     # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].to_string(index=False)
     # st.table(filtered_data[table_columns])
     # st.table(filtered_data[["inst_code", target_rank, "COED", "branch_code", "FEE"]].head(30))
