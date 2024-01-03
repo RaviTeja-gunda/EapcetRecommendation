@@ -83,8 +83,6 @@ def predict_colleges(text, rank, gender, data, target_rank):
                 desired_branch = entity
                 break
     
-    table_columns = ['inst_code', 'rank_cutoff', 'inst_type', 'branch_code', 'FEE']
-    
     # Filter colleges by rank range
     if gender == "Male":
         filtered_data = data[
@@ -95,8 +93,8 @@ def predict_colleges(text, rank, gender, data, target_rank):
         filtered_data = data[
             (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000) & (data["branch_code"] == desired_branch)
         ]
-    
-    filtered_data = filtered_data[table_columns]
+   
+    filtered_data = filtered_data[['inst_code', target_rank, 'st_type', 'branch_code', 'FEE']]
     
     # Check if branch identified
     if desired_branch is None or len(filtered_data) < 5:
@@ -116,7 +114,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
                 (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000)
             ]
         
-        filtered_data = filtered_data[table_columns]
+        filtered_data = filtered_data[['inst_code', target_rank, 'st_type', 'branch_code', 'FEE']]
         
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
