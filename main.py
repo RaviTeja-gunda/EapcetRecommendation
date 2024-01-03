@@ -125,7 +125,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
         
         # Create a new DataFrame with renamed columns and copy data
         new_df = filtered_data.rename(columns=column_mapping).copy()
-        st.table(new_df.head(30))
+        st.table(new_df.head(30).reset_index(drop=True))
         return
 
     # Recommend colleges
@@ -139,7 +139,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     
     # Create a new DataFrame with renamed columns and copy data
     new_df = filtered_data.rename(columns=column_mapping).copy()
-    st.table(new_df.head(30))
+    st.table(new_df.head(30).reset_index(drop=True))
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
