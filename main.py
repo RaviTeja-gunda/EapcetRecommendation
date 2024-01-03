@@ -76,7 +76,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     # Identify desired branch based on keywords in text
     desired_branch = None
     for entity, keywords in branch_map.items():
-        if desired_branch not None:
+        if not desired_branch None:
             break
         for keyword in keywords:
             if keyword in text:
