@@ -16,6 +16,7 @@ branch_map = {
     "ECE": ["ece", "electronics", "circuit", "communication", "networking", "wireless", "rf", "antenna"],
     "EEE": ["eee", "electricity", "power", "energy", "circuit", "control"],
     "MEC": ["design", "manufacturing", "mechanic", "fluid", "thermodynamics"],
+    "ASE": ["ase", "aeronautic", "astronautic", "propulsion", "aerodynamic" "flight" ,"dynamic", "control", "spacecraft"],
     "CSM": ["csm", "mathematics", "math", "algorithm", "theory", "computation", "modeling", "analysis", "problem", "solving"],
     "CSO": ["cso", "operation", "management", "business", "optimization", "decision", "making"],
     "CSD": ["csd", "datascience", "machine", "learning", "statistic", "artificial", "intelligence", "bigdata", "visualization"],
@@ -44,8 +45,7 @@ branch_map = {
     "AI": ["ai", "machine", "learning", "deep", "learning", "computer", "vision", "robotics", "expert"],
     "IOT": ["iot", "connected", "device", "sensor", "network", "bigdata", "cloud", "computing", "smart" "home"],
     "CIC": ["cic", "construction", "management", "infrastructure", "project"],
-    "CBA": ["cba", "bioinformatic", "data", "analysis", "statistic", "modeling", "simulation", "drug", "personalized", "medicine"],
-    "ASE": ["ase", "aeronautic", "astronautic", "propulsion", "aerodynamic" "flight" ,"dynamic", "control", "spacecraft"]
+    "CBA": ["cba", "bioinformatic", "data", "analysis", "statistic", "modeling", "simulation", "drug", "personalized", "medicine"]
 }
 
 
