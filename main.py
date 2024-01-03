@@ -95,7 +95,9 @@ def predict_colleges(text, rank, gender, data, target_rank):
         filtered_data = data[
             (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000) & (data["branch_code"] == desired_branch)
         ]
-
+    
+    filtered_data = filtered_data[table_columns]
+    
     # Check if branch identified
     if desired_branch is None or len(filtered_data) < 5:
         if len(filtered_data) > 0:
@@ -113,7 +115,9 @@ def predict_colleges(text, rank, gender, data, target_rank):
             filtered_data = data[
                 (data[target_rank] < rank + 30000) & (data[target_rank] > rank - 2000)
             ]
-
+        
+        filtered_data = filtered_data[table_columns]
+        
         st.subheader("Here are the recommendations based on your rank:")
         st.write(f"Recommended colleges for rank {rank}, gender {gender}, and caste {student_caste}:")
         filtered_data=filtered_data.sort_values(by=target_rank)
