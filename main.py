@@ -144,14 +144,6 @@ def predict_colleges(text, rank, gender, data, target_rank):
 st.title("EAPCET College List Recommendation System")
 # Apply custom CSS to change the form background color
 st.markdown(
-    # """
-    # <style>
-    # .stApp {
-    #     background-color: #14A4EB; /* Change the color code to your desired background color */
-    # }
-    # </style>
-    # """,
-    # unsafe_allow_html=True
     """
     <style>
     .stApp > header {
