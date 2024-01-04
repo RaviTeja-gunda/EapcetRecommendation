@@ -69,6 +69,7 @@ filtered_data = pd.DataFrame()
 
 def predict_colleges(text, rank, gender, data, target_rank):
 
+    st.write(data.columns)
     # Pre-process student text
     text = text.lower()
     text = [lemmatizer.lemmatize(word) for word in word_tokenize(text) if word not in stop_words]
