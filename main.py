@@ -144,9 +144,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
 # Streamlit UI
 # Custom CSS for a stylish background
 st.markdown(
-    """
     <link rel="stylesheet" type="text/css" href="styles.css">
-    """,
     unsafe_allow_html=True
 )
 st.title("EAPCET College List Recommendation System")
