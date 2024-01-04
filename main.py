@@ -152,6 +152,7 @@ st.markdown(
     # </style>
     # """,
     # unsafe_allow_html=True
+    <style>
     .stApp > header {
       background-color: transparent;
     }
@@ -168,6 +169,8 @@ st.markdown(
       50% {background-position: 100% 100%;}
       100% {background-position: 0% 0%;}
     }
+    </style>
+    unsae_allow_html=True
 )
 
 # User input
