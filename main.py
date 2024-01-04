@@ -172,7 +172,7 @@ st.markdown(
     }
     </style>
     """
-    unsae_allow_html=True
+    unsafe_allow_html=True
 )
 
 # User input
