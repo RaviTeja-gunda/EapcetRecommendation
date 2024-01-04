@@ -68,8 +68,6 @@ filtered_data = pd.DataFrame()
 
 
 def predict_colleges(text, rank, gender, data, target_rank):
-
-    st.write(data.columns)
     # Pre-process student text
     text = text.lower()
     text = [lemmatizer.lemmatize(word) for word in word_tokenize(text) if word not in stop_words]
@@ -159,8 +157,8 @@ st.markdown(
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
 student_rank = st.number_input("Enter your rank:", min_value=1)
-student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"])
-student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
+student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
+student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
 
 # Button to trigger recommendations
