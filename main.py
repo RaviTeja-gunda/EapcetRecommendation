@@ -156,6 +156,10 @@ custom_css = """
             max-width: 1200px; /* Set your desired maximum width */
             margin: 0 auto;
         }
+    /* Style form elements */
+        .stTextInput, .stNumberInput, .stSelectbox, .stButton {
+            margin-bottom: 10px; /* Adjust the spacing between form elements */
+        }
     </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
