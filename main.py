@@ -144,14 +144,12 @@ def predict_colleges(text, rank, gender, data, target_rank):
 # Streamlit UI
 # Custom CSS for a stylish background
 st.markdown(
-    """
     <style>
     body {
         background-color: #f4f4f4; /* Set your desired background color */
         font-family: "Arial", sans-serif; /* Set your desired font family */
     }
     </style>
-    """,
     unsafe_allow_html=True
 )
 st.title("EAPCET College List Recommendation System")
