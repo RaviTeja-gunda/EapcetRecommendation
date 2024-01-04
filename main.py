@@ -156,19 +156,19 @@ custom_css = """
             max-width: 1200px; /* Set your desired maximum width */
             margin: 0 auto;
         }
-    /* Style form elements */
-        .stTextInput, .stNumberInput, .stSelectbox, .stButton {
-            margin-bottom: 10px; /* Adjust the spacing between form elements */
-        }
     </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
+student_text.style("margin-bottom: 10px")
 student_rank = st.number_input("Enter your rank:", min_value=1)
+student_rank.style("margin-bottom: 10px")
 student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"])
+student_gender.style("margin-bottom: 10px")
 student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
+student_caste.style("margin-bottom: 10px")
 
 # Button to trigger recommendations
 target_rank = None
