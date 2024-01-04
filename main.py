@@ -147,8 +147,8 @@ st.title("EAPCET College List Recommendation System")
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
 student_rank = st.number_input("Enter your rank:", min_value=1)
-student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
-student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
+student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"])
+student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
 # Button to trigger recommendations
 target_rank = None
