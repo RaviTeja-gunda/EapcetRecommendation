@@ -143,6 +143,17 @@ def predict_colleges(text, rank, gender, data, target_rank):
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
+# Apply custom CSS to change the form background color
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f0f0f0; /* Change the color code to your desired background color */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
