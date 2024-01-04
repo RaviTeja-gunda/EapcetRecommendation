@@ -143,48 +143,13 @@ def predict_colleges(text, rank, gender, data, target_rank):
 
 # Streamlit UI
 st.title("EAPCET College List Recommendation System")
-# Custom CSS
-custom_css = """
-    <style>
-        body {
-            background-color: #1ED2E1; /* Set your desired background color */
-            font-family: "Arial", sans-serif; /* Set your desired font family */
-            margin: 0;
-            padding: 0;
-        }
-        .stApp {
-            max-width: 1200px; /* Set your desired maximum width */
-            margin: 0 auto;
-        }
-    </style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
 
 # User input
-# student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
-# student_rank = st.number_input("Enter your rank:", min_value=1)
-# student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"])
-# student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
+student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
+student_rank = st.number_input("Enter your rank:", min_value=1)
+student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"])
+student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
 
-# User input with custom styles
-with st.form(key="user_input_form"):
-    student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....", key="interests")
-    student_rank = st.number_input("Enter your rank:", min_value=1, key="rank")
-    student_gender = st.selectbox("Select your gender:", ["Select one", "Male", "Female"], key="gender")
-    student_caste = st.selectbox("Select your caste:", ["Select one", "OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"], key="caste")
-
-    # Apply custom CSS to the form
-    st.form_submit_button("Get College Recommendations", on_click=predict_colleges)
-    st.markdown(
-        """
-        <style>
-        form {
-            margin-bottom: 20px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
 
 # Button to trigger recommendations
 target_rank = None
