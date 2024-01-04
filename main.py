@@ -148,7 +148,7 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #f0f0f0; /* Change the color code to your desired background color */
+        background-color: #1ED2E1; /* Change the color code to your desired background color */
     }
     </style>
     """,
