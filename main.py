@@ -149,6 +149,12 @@ custom_css = """
         body {
             background-color: #1ED2E1; /* Set your desired background color */
             font-family: "Arial", sans-serif; /* Set your desired font family */
+            margin: 0;
+            padding: 0;
+        }
+        .stApp {
+            max-width: 1200px; /* Set your desired maximum width */
+            margin: 0 auto;
         }
     </style>
 """
