@@ -142,12 +142,16 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.table(new_df.head(30).reset_index(drop=True))
 
 # Streamlit UI
-# Custom CSS for a stylish background
-st.markdown(
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    unsafe_allow_html=True
-)
-st.title("EAPCET College List Recommendation System")
+# Custom CSS
+custom_css = """
+    <style>
+        body {
+            background-color: #1ED2E1; /* Set your desired background color */
+            font-family: "Arial", sans-serif; /* Set your desired font family */
+        }
+    </style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
 
 # User input
 student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
