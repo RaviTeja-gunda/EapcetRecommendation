@@ -142,6 +142,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
     st.table(new_df.head(30).reset_index(drop=True))
 
 # Streamlit UI
+st.title("EAPCET College List Recommendation System")
 # Custom CSS
 custom_css = """
     <style>
