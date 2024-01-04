@@ -171,7 +171,7 @@ st.markdown(
       100% {background-position: 0% 0%;}
     }
     </style>
-    """
+    """,
     unsafe_allow_html=True
 )
 
