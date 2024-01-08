@@ -101,7 +101,7 @@ def predict_colleges(text, rank, gender, data, target_rank):
             st.write(f"Your desired branch is {desired_branch}")
             st.write("Very few number of colleges found as per your desired branch.....")
         else:
-            st.write("Branch could not be identified from the text....")
+            st.write("Branch could not be identified from your interests....")
 
         # Update recommendations based on rank
         if gender == "Male":
@@ -168,7 +168,7 @@ st.markdown(
 )
 
 # User input
-student_text = st.text_area("Enter your interests:", value="", placeholder="I am interested in .....")
+student_text = st.text_area("Enter your area of interests:", value="", placeholder="I am interested in .....")
 student_rank = st.number_input("Enter your rank:", min_value=1)
 student_gender = st.selectbox("Select your gender:", ["Male", "Female"])
 student_caste = st.selectbox("Select your caste:", ["OC", "EWS", "SC", "ST", "BCA", "BCB", "BCC", "BCD", "BCE"])
